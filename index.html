@@ -105,7 +105,8 @@
         }        
         htmlText = `<div id="T${i}" class="texto">${i+lorem}</div>`;
         //Concatenamos todo el html
-        htmlTotal += htmlPest+htmlText    }
+        htmlTotal += htmlPest+htmlText;
+    }
     //escribimos el html
     document.querySelector(".contenedor").innerHTML=htmlTotal;
 
@@ -121,13 +122,12 @@
             }
             //añadimos clase al objeto del envento click
             document.querySelector(`#T${event.target.id}`).classList.add("texto_activo");
-            //Si es el último,añadimos además una clase de redondeo de borde inferior
+            //Si es el último tab,añadimos además una clase de redondeo de borde inferior
             if(event.target.id==String(num)){
                 document.querySelector(`#T${event.target.id}`).classList.add("bordeInf");
                 event.target.classList.remove("bordeInf");
-            }else{ //en caso de que no sea el último, damos al último tab de nuevo el borde inferior
+            }else{ //en caso de que no sea el último tab, damos al último tab de nuevo el borde inferior
                 document.getElementById(num).classList.add("bordeInf");
-                console.log(num)
             }
         }        
     })
